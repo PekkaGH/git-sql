@@ -1,0 +1,1 @@
+Select db_name()
