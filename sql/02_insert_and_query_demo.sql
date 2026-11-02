@@ -35,3 +35,16 @@ ORDER BY
     p.country,
     b.book_name;
 GO
+-- Added during Git demo: grouped report by country
+SELECT
+    p.country,
+    COUNT(*) AS number_of_books,
+    AVG(b.price) AS avg_price
+FROM dbo.Book AS b
+JOIN dbo.Publisher AS p
+    ON p.publisher_id = b.publisher_id
+GROUP BY
+    p.country
+ORDER BY
+    p.country;
+GO
